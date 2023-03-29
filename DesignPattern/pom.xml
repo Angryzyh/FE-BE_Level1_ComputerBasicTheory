@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.angryzyh</groupId>
+    <artifactId>DesignPattern</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>DesignPattern</name>
+    <description>23种设计模式</description>
+
+    <modules>
+        <module>SixDesignPrinciple</module>
+        <module>CreationalPatterns</module>
+    </modules>
+
+    <properties>
+        <!-- 其中project.build.sourceEncoding表示项目拷贝时的字符编码，及项目整体代码的字符为utf-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- project.reporting.outputEncoding表示maven的一些插件输出文件时的字符编码 -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- maven.compiler.encoding表示maven编译时的字符 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.8.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>DesignPattern</finalName>
+    </build>
+</project>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.angryzyh</groupId>
+    <artifactId>DataStructureAndAlgorithm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!--子模块-->
+    <modules>
+        <module>SinglyLinkedList</module>
+    </modules>
+
+    <!-- 创建多环境-->
+    <profiles>
+        <!--定义具体的环境：生产环境-->
+        <profile>
+            <!--定义环境对应的唯一名称-->
+            <id>pro_env</id>
+            <!--定义环境中换用的属性值-->
+            <properties>
+              <!--  <jdbc.url>jdbc:mysql://127.1.1.1:3306/ssm_db</jdbc.url>-->
+            </properties>
+            <!--设置默认启动-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <!--定义具体的环境：开发环境-->
+        <profile>
+            <id>dep_env</id>
+            <properties>
+                <jdbc.url>jdbc:mysql://127.2.2.2:3306/ssm_db</jdbc.url>
+            </properties>
+        </profile>
+    </profiles>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>4.13.2</junit.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--单元测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <!--插件管理-->
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <!--配置测试资源文件对应的信息-->
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>angryzyh-release</id>
+            <url>http://localhost:8081/repository/angryzyh-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>angryzyh-snapshot</id>
+            <url>http://localhost:8081/repository/angryzyh-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
