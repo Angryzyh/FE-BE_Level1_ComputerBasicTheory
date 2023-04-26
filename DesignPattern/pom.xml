@@ -16,6 +16,7 @@
     <modules>
         <module>SixDesignPrinciple</module>
         <module>CreationalPatterns</module>
+        <module>StructuralPatterns</module>
     </modules>
 
     <properties>

@@ -6,7 +6,7 @@
 ### 1.设计模式三大分类
 设计模式分为三种类型，共23类。
 * 创建型模式(Creational Patterns)5类(对象怎么来)：
-  * 单例模式(Singleton)★★★`M` `S`
+  * 单例模式(Singleton)★★★`M` `S` √
   * 工厂模式(Factory)★★`M` `S`    √
   * 抽象工厂模式(Abstract Factory)  √
   * 建造者模式(Builder)★`M` `SS`
@@ -15,7 +15,7 @@
 * 结构型模式(Structural Patterns)7类(对象和谁有关)：
   * 适配器模式(Adapter)★`C` `IO` `M` `S` `SS`
   * 组合模式(Composite)`M` `SM`
-  * 装饰器模式(Decorator)★`IO` `M` `S` `SS`
+  * 装饰器模式(Decorator)★`IO` `M` `S` `SS` √
   * 代理模式(Proxy)★★`M` `S` `SS`  √
   * 享元模式(Flyweight)
   * 外观模式(Facade)`N` `T`
